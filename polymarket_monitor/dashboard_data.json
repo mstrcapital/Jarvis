@@ -1,0 +1,71 @@
+{
+  "generatedAt": "2026-02-17T21:25:00Z",
+  "summary": {
+    "total_traders": 12,
+    "profitable": 11,
+    "loss_making": 1,
+    "total_pnl": 5005350.74
+  },
+  "traders": {
+    "@PolycoolApp": {
+      "pnl": 4476569.12,
+      "value": 11100.0,
+      "category": "NegRisk"
+    },
+    "@OpenClaw": {
+      "pnl": 386000.0,
+      "value": 0.0,
+      "category": "BTC高频"
+    },
+    "@Demphu.finite": {
+      "pnl": 91599.0,
+      "value": 0.0,
+      "category": "BTC高频"
+    },
+    "@vague-sourdough": {
+      "pnl": 58712.0,
+      "value": 16900.0,
+      "category": "BTC高频"
+    },
+    "@0x594edB": {
+      "pnl": 30000.0,
+      "value": 0.0,
+      "category": "Weather"
+    },
+    "@HolyMoses7": {
+      "pnl": 2578.1,
+      "value": 140400.0,
+      "category": "NegRisk"
+    },
+    "@copenzafan": {
+      "pnl": -40954.81,
+      "value": 4888.58,
+      "category": "NegRisk"
+    },
+    "@cryptorover": {
+      "pnl": 499.31,
+      "value": 0.05,
+      "category": "Basic"
+    },
+    "@luishXYZ": {
+      "pnl": 233.87,
+      "value": 2777.43,
+      "category": "NegRisk"
+    },
+    "@clawdvine": {
+      "pnl": 104.26,
+      "value": 0.0,
+      "category": "Basic"
+    },
+    "@itslirrato": {
+      "pnl": 8.7,
+      "value": 108.71,
+      "category": "NegRisk"
+    },
+    "@blknoiz06": {
+      "pnl": 1.19,
+      "value": 12.27,
+      "category": "Basic"
+    }
+  }
+}

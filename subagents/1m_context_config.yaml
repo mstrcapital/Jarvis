@@ -1,0 +1,11 @@
+models:
+  anthropic:
+    params:
+      context1m: true
+agents:
+  default:
+    params:
+      context1m: true
+subagents:
+  enabled: true
+  max_subagents: 8

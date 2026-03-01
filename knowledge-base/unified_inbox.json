@@ -1,0 +1,22 @@
+[
+  {
+    "source_type": "manual",
+    "source_name": "nkmc.ai",
+    "title": "Title: nkmc.ai — The gateway of internet for all agents.",
+    "content": "URL Source: https://nkmc.ai/\n\nMarkdown Content:\nThe gateway of internet\n\nfor all agents.\n----------------------------------------\n\n5 commands. The entire internet.\n\nagent session\n\nOne JWT. One gateway. All APIs.\n-------------------------------\n\nNo accounts to register. API keys managed automatically. No auth flows to understand. No MCP to load. 90% less token context in API requests.\n\n42 APIs · 9,768 endpoints\n\nAgent→nkmc Gateway→Any Service\n\nYour keys, safely managed\n-------------------------\n\nWhen an API requires authentication, nkmc resolves credentials automatically through a three-layer lookup — so your agent never touches raw secrets.\n\n01\n\n### Local store\n\nKeys saved via nkmc keys set are stored in ~/.nkmc with 0600 permissions. They never leave your machine unless you choose to sync.\n\n02\n\n### shipkey\n\nOptional integration with 1Password or Bitwarden via @shipkey/core. Your existing secret manager becomes the source of truth.\n\n03\n\n### nkmc vault\n\nUpload keys to the gateway with nkmc keys set --sync. Stored AES-GCM encrypted in your agent's private BYOK vault — requests made with your JWT will automatically use them.\n\n$ nkmc keys set api.openai.com --token sk-...\n\nKey saved for api.openai.com\n\nKey synced to gateway for api.openai.com\n\nYour API, 3 minutes to the agent ecosystem.\n-------------------------------------------\n\nYou used to design interfaces and products for human users. Now, your product can also be used by Agents.\n\n01\n\n### Install CLI\n\nnpm install -g @nkmc/cli — one command to get started.\n\n02\n\n### Discover & Claim\n\nThe CLI scans your project, discovers your API domain, and claims it.\n\n03\n\n### Auto-register\n\nOnce claimed, generates skill.md and registers your API with the gateway.\n\nTry it now\n----------\n\nPick a service. See how your agent calls real APIs.\n\nᐃ\n\nN a K a M i C hi\n----------------\n\n中道 — The middle path.\n\nNot exposing the raw complexity of the API ecosystem. Not over-abstracting it away. The right layer in between — for agents and the internet.",
+    "url": "https://nkmc.ai/",
+    "id": "43a495e3138a",
+    "fetched_at": "2026-02-27T02:58:37.701338",
+    "media_type": "text",
+    "media_url": null,
+    "score": 0,
+    "priority": "normal",
+    "category": "",
+    "tags": [],
+    "processed": false,
+    "digest_date": null,
+    "title_cn": null,
+    "content_cn": null,
+    "extra": {}
+  }
+]

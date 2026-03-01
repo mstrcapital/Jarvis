@@ -1,0 +1,12 @@
+subagent:
+  id: "xiao_hai"
+  name: "小海"
+  role: "出海研究"
+memory:
+  limit: "512MB"
+  isolation: true
+schedule:
+  - "09:00,every4h"
+capabilities:
+  - task_coordination
+  - progress_tracking

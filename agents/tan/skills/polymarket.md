@@ -1,0 +1,1 @@
+../../../polymarket-cli/crypto_report.sh

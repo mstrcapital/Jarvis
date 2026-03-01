@@ -1,0 +1,99 @@
+import { FileText, Clapperboard, ArrowRight, FolderOpen } from "lucide-react";
+import type { TranscribeResult } from "../../types/transcriber";
+
+interface TranscriptionResultsProps {
+  result: TranscribeResult | null;
+  onSendToEditor: () => void;
+  onSendToTranslator: (payload: { video_path: string; subtitle_path: string }) => void;
+}
+
+export function TranscriptionResults({ result, onSendToEditor, onSendToTranslator }: TranscriptionResultsProps) {
+  return (
+    <div className="h-full flex flex-col bg-[#1a1a1a] border border-white/5 rounded-2xl shadow-2xl overflow-hidden">
+      {/* Header */}
+      <div className="p-4 border-b border-white/5 flex justify-between items-center bg-white/[0.02]">
+        <h2 className="text-base font-semibold text-white flex items-center gap-2">
+           <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-indigo-500/10 border border-indigo-500/20">
+             <FileText className="w-4 h-4 text-indigo-400" />
+           </div>
+           Result Preview
+        </h2>
+        {result && result.segments && (
+          <div className="px-2.5 py-1 rounded-md bg-white/5 border border-white/5 text-xs font-mono text-slate-400 flex items-center gap-2">
+            <span>{result.segments.length} segments</span>
+          </div>
+        )}
+      </div>
+      
+      {/* Content */}
+      <div className="flex-1 overflow-y-auto p-0 scroll-smooth custom-scrollbar bg-black/20">
+        {result && result.segments && result.segments.length > 0 ? (
+          <div className="divide-y divide-white/5">
+            {result.segments.map((seg, idx) => (
+              <div key={seg.id} className="flex gap-4 p-4 hover:bg-white/[0.02] transition-colors group">
+                <div className="w-8 text-xs text-slate-600 font-mono pt-1 text-right shrink-0 select-none">
+                  {idx + 1}
+                </div>
+                <div className="text-slate-500 w-20 shrink-0 select-none text-xs font-mono pt-1">
+                  {new Date(seg.start * 1000).toISOString().substr(11, 8)}
+                </div>
+                <div className="text-slate-300 group-hover:text-white transition-colors text-sm leading-relaxed">
+                  {seg.text}
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="h-full flex flex-col items-center justify-center text-slate-600 gap-4">
+            <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center">
+               <FileText className="w-8 h-8 opacity-20" />
+            </div>
+            <p className="text-sm font-medium">No transcription results yet</p>
+          </div>
+        )}
+      </div>
+
+      {/* Footer Actions */}
+      {result && (
+        <div className="p-4 border-t border-white/5 bg-white/[0.02] flex justify-between items-center gap-4">
+             {result.srt_path && (
+                 <button 
+                  onClick={() => window.electronAPI && window.electronAPI.showInExplorer(result.srt_path!)}
+                  className="text-xs text-slate-500 hover:text-indigo-400 flex items-center gap-1.5 transition-colors px-3 py-2 rounded-lg hover:bg-white/5"
+                 >
+                   <FolderOpen className="w-3.5 h-3.5" />
+                   <span className="truncate max-w-[200px]">{result.srt_path}</span>
+                 </button>
+             )}
+
+            <div className="flex gap-3">
+                <button
+                onClick={() => {
+                    const payload = {
+                        video_path: result.video_path || result.audio_path,
+                        subtitle_path: result.srt_path || result.subtitle_path
+                    };
+                    if (payload.subtitle_path) {
+                            onSendToTranslator(payload as any); 
+                    } else {
+                        alert("No SRT file path found in result. Cannot translate.");
+                    }
+                }}
+                className="flex items-center gap-2 px-4 py-2.5 bg-indigo-600/10 hover:bg-indigo-600/20 text-indigo-400 border border-indigo-500/20 hover:border-indigo-500/30 rounded-xl text-sm font-medium transition-all"
+                >
+                <ArrowRight size={16} />
+                Translate
+                </button>
+                <button
+                onClick={onSendToEditor}
+                className="flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-purple-600 to-pink-600 hover:shadow-lg hover:shadow-purple-500/20 text-white rounded-xl text-sm font-medium transition-all transform hover:-translate-y-0.5"
+                >
+                <Clapperboard size={16} />
+                Open Editor
+                </button>
+            </div>
+        </div>
+      )}
+    </div>
+  );
+}

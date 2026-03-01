@@ -1,0 +1,35 @@
+general:
+  debug: false
+  instance_name: Tavily-Search
+  contact_instance: ''
+
+search:
+  safe_search: 0
+  autocomplete: ''
+  default_lang: en
+
+server:
+  bind_address: 0.0.0.0
+  secret_key: tavily-search-key-2026
+  limiter: false
+  image_proxy: true
+
+ui:
+  static_use_hash: true
+  default_theme: simple
+
+engines:
+  - name: brave
+    engine: brave
+    shortcut: br
+    disabled: false
+
+  - name: mwmbl
+    engine: mwmbl
+    shortcut: mw
+    disabled: false
+
+  - name: duckduckgo
+    engine: duckduckgo
+    shortcut: ddg
+    disabled: false

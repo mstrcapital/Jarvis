@@ -1,0 +1,1 @@
+../../../skills/weather/SKILL.md

@@ -1,0 +1,95 @@
+{
+  "version": "v1.2",
+  "updatedAt": "2026-02-17T21:29:18.426819",
+  "newTraders": [
+    "@mikocrypto11",
+    "@xpredicter"
+  ],
+  "totalTraders": 14,
+  "traders": {
+    "@PolycoolApp": {
+      "pnl": 4476569.12,
+      "value": 11100.0,
+      "category": "NegRisk",
+      "status": "活跃"
+    },
+    "@HolyMoses7": {
+      "pnl": 2578.1,
+      "value": 140400.0,
+      "category": "NegRisk",
+      "status": "活跃"
+    },
+    "@copenzafan": {
+      "pnl": -40954.81,
+      "value": 4888.58,
+      "category": "NegRisk",
+      "status": "亏损"
+    },
+    "@luishXYZ": {
+      "pnl": 233.87,
+      "value": 2777.43,
+      "category": "NegRisk",
+      "status": "活跃"
+    },
+    "@clawdvine": {
+      "pnl": 104.26,
+      "value": 0.0,
+      "category": "Basic",
+      "status": "活跃"
+    },
+    "@cryptorover": {
+      "pnl": 499.31,
+      "value": 0.05,
+      "category": "Basic",
+      "status": "活跃"
+    },
+    "@itslirrato": {
+      "pnl": 8.7,
+      "value": 108.71,
+      "category": "NegRisk",
+      "status": "活跃"
+    },
+    "@blknoiz06": {
+      "pnl": 1.19,
+      "value": 12.27,
+      "category": "Basic",
+      "status": "活跃"
+    },
+    "@OpenClaw": {
+      "pnl": 386000.0,
+      "value": 0.0,
+      "category": "BTC高频",
+      "status": "活跃"
+    },
+    "@Demphu.finite": {
+      "pnl": 91599.0,
+      "value": 0.0,
+      "category": "BTC高频",
+      "status": "活跃"
+    },
+    "@vague-sourdough": {
+      "pnl": 58712.0,
+      "value": 16900.0,
+      "category": "BTC高频",
+      "status": "活跃"
+    },
+    "@0x594edB": {
+      "pnl": 30000.0,
+      "value": 0.0,
+      "category": "Weather",
+      "status": "活跃"
+    },
+    "@mikocrypto11": {
+      "pnl": 0.0,
+      "value": 0.0,
+      "category": "待验证",
+      "status": "待验证"
+    },
+    "@xpredicter": {
+      "pnl": 0.0,
+      "value": 0.0,
+      "category": "待验证",
+      "status": "待验证"
+    }
+  }
+}

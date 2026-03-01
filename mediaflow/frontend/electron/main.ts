@@ -1,0 +1,85 @@
+/// <reference types="node" />
+import { app, BrowserWindow, Menu, shell } from "electron";
+import path from "path";
+
+// ─── IPC Handler Registration ───────────────────────────────────
+// Each module exports a register function that sets up its IPC handlers.
+// This keeps main.ts focused on window creation and app lifecycle.
+import { registerDialogHandlers } from "./ipc/dialog-handlers";
+import { registerWindowHandlers } from "./ipc/window-handlers";
+import { registerCookieHandlers } from "./ipc/cookie-handlers";
+import { registerConfigHandlers } from "./ipc/config-handlers";
+
+registerDialogHandlers();
+registerWindowHandlers();
+registerCookieHandlers();
+registerConfigHandlers();
+
+// ─── Main Window ────────────────────────────────────────────────
+function createWindow() {
+  // Check if we are in dev mode
+  const isDev = process.env.IS_DEV === "true";
+
+  const mainWindow = new BrowserWindow({
+    width: 1200,
+    height: 800,
+    frame: false, // Custom frame
+    webPreferences: {
+      preload: path.join(__dirname, "preload.js"),
+      nodeIntegration: false,
+      contextIsolation: true,
+      webSecurity: !isDev, // Disable only in Dev for localhost CORS
+    },
+  });
+
+  if (isDev) {
+    mainWindow.loadURL("http://localhost:5173");
+    mainWindow.webContents.openDevTools();
+  } else {
+    mainWindow.loadFile(path.join(__dirname, "../dist/index.html"));
+  }
+
+  // Application Menu
+  const template: Electron.MenuItemConstructorOptions[] = [
+    {
+      label: "File",
+      submenu: [{ role: "quit" }],
+    },
+    {
+      label: "View",
+      submenu: [
+        { role: "reload" },
+        { role: "forceReload" },
+        { role: "toggleDevTools" },
+      ],
+    },
+    {
+      label: "Help",
+      submenu: [
+        {
+          label: "Open API Docs",
+          click: async () => {
+            await shell.openExternal("http://localhost:8000/docs");
+          },
+        },
+      ],
+    },
+  ];
+  const menu = Menu.buildFromTemplate(template);
+  Menu.setApplicationMenu(menu);
+}
+
+// ─── App Lifecycle ──────────────────────────────────────────────
+app.on("ready", createWindow);
+
+app.on("window-all-closed", () => {
+  if (process.platform !== "darwin") {
+    app.quit();
+  }
+});
+
+app.on("activate", () => {
+  if (BrowserWindow.getAllWindows().length === 0) {
+    createWindow();
+  }
+});

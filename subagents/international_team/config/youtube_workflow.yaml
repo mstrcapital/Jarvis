@@ -1,0 +1,49 @@
+youtube_daily_workflow:
+  platform: "YouTube"
+  focus: "Ad Revenue"
+  version: "1.0"
+  
+  schedule:
+    daily:
+      - "09:00 - 检查前一天视频数据"
+      - "10:00 - 竞品YouTube分析"
+      - "11:00 - 脚本创作/优化"
+      - "14:00 - 缩略图和标题优化"
+      - "15:00 - 社区帖子互动"
+      - "17:00 - 回复评论"
+      
+    weekly:
+      - "Monday 10:00 - 本周内容计划"
+      - "Monday 15:00 - 视频1上传"
+      - "Wednesday 10:00 - 视频2策划"
+      - "Wednesday 15:00 - 视频2上传"
+      - "Friday 10:00 - 周末内容准备"
+      - "Friday 15:00 - 视频3上传"
+      - "Sunday 18:00 - 本周数据分析"
+  
+  content_calendar:
+    monday:
+      - "行业深度分析 (15-20分钟)"
+      - "SEO优化标题"
+      - "详细描述 + 关键词"
+      
+    wednesday:
+      - "教程和指南 (10-15分钟)"
+      - "缩略图A/B测试"
+      - "章节标记"
+      
+    friday:
+      - "产品评测或趋势解读 (8-12分钟)"
+      - "CTA行动号召"
+      - "end_screen推广"
+  
+  monetization_checklist:
+    - "订阅数: ___/1000"
+    - "观看时长: ___/4000"
+    - "视频数: ___"
+    - "最后更新时间: ___"
+  
+  key_apis:
+    - "YouTube Data API v3"
+    - "YouTube Analytics API"
+    - "Social Blade API"

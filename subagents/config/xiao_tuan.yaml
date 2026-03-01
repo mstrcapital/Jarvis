@@ -1,0 +1,12 @@
+subagent:
+  id: "xiao_tuan"
+  name: "小团"
+  role: "团队管理"
+memory:
+  limit: "256MB"
+  isolation: true
+schedule:
+  - "08:30,hourly"
+capabilities:
+  - task_coordination
+  - progress_tracking

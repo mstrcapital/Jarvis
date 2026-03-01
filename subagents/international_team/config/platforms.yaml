@@ -1,0 +1,108 @@
+platform_matrix:
+  name: "International Content Team - Platform Matrix v1.1"
+  version: "1.1"
+  last_updated: "2026-02-19"
+
+  accounts:
+    - id: "wechat_sa"
+      name: "微信服务号"
+      type: "service_account"
+      language: "中文"
+      publish_frequency: "2-3篇/周"
+      focus:
+        - "服务功能"
+        - "深度文章"
+        - "用户互动"
+
+    - id: "tiktok"
+      name: "TikTok"
+      type: "short_video"
+      language: "English + 字幕"
+      publish_frequency: "1-2条/天"
+      focus:
+        - "15-60秒短视频"
+        - "热点挑战"
+        - "产品演示"
+
+    - id: "instagram"
+      name: "Instagram"
+      type: "visual"
+      language: "English"
+      publish_frequency: "1-2篇/天"
+      focus:
+        - "高质量图片"
+        - "Stories互动"
+        - "Reels短视频"
+
+    - id: "linkedin"
+      name: "LinkedIn"
+      type: "professional"
+      language: "English"
+      publish_frequency: "2-3篇/周"
+      focus:
+        - "专业文章"
+        - "行业观点"
+        - "职业发展"
+
+    - id: "x_twitter"
+      name: "X (Twitter)"
+      type: "microblog"
+      language: "English + 中文"
+      publish_frequency: "5-10条/天"
+      focus:
+        - "实时互动"
+        - "热点评论"
+        - "行业观点"
+
+    # NEW: YouTube - Ad Revenue Focus
+    - id: "youtube"
+      name: "YouTube"
+      type: "long_video"
+      language: "English + 中文"
+      publish_frequency: "3-5条/周"
+      focus:
+        - "中长视频内容"
+        - "广告分成收益"
+        - "观众增长"
+      monetization:
+        enabled: true
+        type: "ad_revenue"
+        requirements:
+          - "1000 subscribers"
+          - "4000 watch hours"
+          - "符合YouTube政策"
+      content_strategy:
+        video_length: "8-20分钟"
+        upload_schedule:
+          - "Monday"
+          - "Wednesday"
+          - "Friday"
+        content_types:
+          - "行业深度分析"
+          - "教程和指南"
+          - "产品评测"
+          - "趋势解读"
+          - "幕后故事"
+        optimization:
+          - "SEO优化标题"
+          - "吸引人缩略图"
+          - "前3秒钩子"
+          - "行动号召CTA"
+          - "end_screen推广"
+
+  content_distribution:
+    workflow:
+      - step: "creation"
+        handler: "xiaomei"
+      - step: "editing"
+        handler: "xiaobian"
+      - step: "video_production"
+        handler: "xiaomei"
+      - step: "optimization"
+        handler: "xiaoqu"
+      - step: "publishing"
+        handler: "platform_specific"
+      - step: "analytics"
+        handler: "xiaoshu"
+      - step: "insights"
+        handler: "xiaozhen"

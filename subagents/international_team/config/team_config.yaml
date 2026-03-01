@@ -1,0 +1,99 @@
+team:
+  name: "Jarvis International Content Team"
+  version: "1.1"
+  goal: "International Super Content Team - With YouTube Ad Revenue"
+  last_updated: "2026-02-19"
+  
+  ceo: "jarvis"
+  
+  members:
+    - id: "xiaomei"
+      name: "👩‍💼 小美"
+      role: "Chief Content Officer"
+      memory: "512MB"
+      youtube_role: "视频内容策划"
+      
+    - id: "xiaobian"
+      name: "✍️ 小编"
+      role: "Chief Editor"
+      memory: "256MB"
+      youtube_role: "视频脚本审核"
+      
+    - id: "xiaoshu"
+      name: "📊 小数"
+      role: "Data Director"
+      memory: "256MB"
+      youtube_role: "YouTube数据分析"
+      
+    - id: "xiaozhen"
+      name: "🔎 小据"
+      role: "Insights Analyst"
+      memory: "256MB"
+      youtube_role: "视频表现洞察"
+      
+    - id: "xiaoyan"
+      name: "🔬 小研"
+      role: "Research Director"
+      memory: "256MB"
+      youtube_role: "行业视频研究"
+      
+    - id: "xiaoqu"
+      name: "🚀 小趋"
+      role: "Trend Hunter"
+      memory: "256MB"
+      youtube_role: "热门视频趋势"
+
+platforms: 6
+total_memory: "~2.0GB"
+total_agents: 7 (1 CEO + 6 specialists)
+
+youtube_focus:
+  goal: "广告分成收益"
+  target_subscribers: 1000
+  target_watch_hours: 4000
+  monetization_status: "待激活"
+  
+  content_plan:
+    - "3-5个视频/周"
+    - "8-20分钟/视频"
+    - "8-15个广告位/视频"
+    
+  revenue_targets:
+    - month_1: "$0 (冷启动)"
+    - month_3: "$50-100 (达到要求)"
+    - month_6: "$500-1000 (稳定增长)"
+    - month_12: "$2000-5000 (规模化)"
+
+workflow:
+  youtube_pipeline:
+    - step: "选题策划"
+      handler: "xiaomei"
+      output: "内容日历"
+      
+    - step: "脚本创作"
+      handler: "xiaomei"
+      output: "视频脚本"
+      
+    - step: "脚本审核"
+      handler: "xiaobian"
+      output: "审核反馈"
+      
+    - step: "视频制作"
+      handler: "external"
+      output: "成品视频"
+      
+    - step: "上传优化"
+      handler: "xiaomei"
+      output: "优化后的元数据"
+      
+    - step: "发布推广"
+      handler: "xiaoshu"
+      output: "推广计划"
+      
+    - step: "数据分析"
+      handler: "xiaoshu"
+      output: "表现报告"
+      
+    - step: "洞察优化"
+      handler: "xiaozhen"
+      output: "优化建议"

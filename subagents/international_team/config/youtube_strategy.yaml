@@ -1,0 +1,111 @@
+youtube_strategy:
+  id: "youtube_revenue"
+  name: "YouTube广告分成策略"
+  version: "1.0"
+  focus: "ad_revenue"
+  
+  monetization:
+    enabled: true
+    
+    requirements:
+      - "1000 subscribers (1000订阅)"
+      - "4000 watch hours (4000观看时长)"
+      - "符合YouTube合作计划政策"
+    
+    revenue_streams:
+      - "display_ads (展示广告)"
+      - "overlay_ads (-overlay广告)"
+      - "video_ads (视频广告)"
+      - "shorts_ads (短视频广告)"
+      - "memberships (会员)"
+      - "super_chat (超级聊天)"
+      - "merchandise_shelf (商品架)"
+  
+  content_strategy:
+    video_length: "8-20分钟"
+    optimal_length: "12-15分钟 (广告位最多)"
+    
+    upload_schedule:
+      - "Monday 12:00 UTC"  # 最佳发布时间
+      - "Wednesday 12:00 UTC"
+      - "Friday 12:00 UTC"
+    
+    content_pillars:
+      - name: "行业深度分析"
+        frequency: "1-2/周"
+        length: "15-20分钟"
+        cpm_potential: "高"
+      
+      - name: "教程和指南"
+        frequency: "1/周"
+        length: "10-15分钟"
+        cpm_potential: "中高"
+      
+      - name: "产品评测"
+        frequency: "1-2/周"
+        length: "8-12分钟"
+        cpm_potential: "中"
+      
+      - name: "趋势解读"
+        frequency: "2-3/周"
+        length: "5-10分钟"
+        cpm_potential: "中"
+      
+      - name: "幕后故事"
+        frequency: "1/周"
+        length: "8-15分钟"
+        cpm_potential: "低-中"
+  
+  optimization:
+    pre_upload:
+      - "SEO优化标题 (60字符内)"
+      - "吸引人缩略图 (1280x720)"
+      - "关键词标签 (30个)"
+      - "详细描述 (前150字最重要)"
+      - "字幕和闭路字幕"
+    
+    video_elements:
+      - "前3秒钩子 (hook)"
+      - "章节标记 (chapters)"
+      - "end_screen推广"
+      - "卡片 (cards)"
+      - "行动号召CTA"
+    
+    post_upload:
+      - "分享到其他平台"
+      - "社区帖子互动"
+      - "回复评论"
+      - "分析首24小时数据"
+  
+  analytics:
+    key_metrics:
+      - "RPM (每千次展示收入)"
+      - "CPM (每千次展示成本)"
+      - "观看时长"
+      - "订阅转化率"
+      - "点击率CTR"
+      - "平均观看百分比"
+    
+    tools:
+      - "YouTube Studio"
+      - "Social Blade"
+      - "Google Analytics"
+  
+  growth_strategy:
+    short_term:
+      - "每周3-5个视频"
+      - "优化前3秒"
+      - "增加观众停留"
+      - "鼓励订阅和点赞"
+    
+    mid_term:
+      - "建立内容系列"
+      - "与合作者交叉推广"
+      - "优化缩略图点击率"
+      - "分析高表现视频"
+    
+    long_term:
+      - "达到1000订阅"
+      - "达到4000观看时长"
+      - "申请合作计划"
+      - "多元化收入来源"

@@ -1,0 +1,28 @@
+{
+  "generatedAt": "2026-02-19T01:36:57.438Z",
+  "version": "v1.3",
+  "structure": {
+    "L0_Domains": [
+      "index.md"
+    ],
+    "L1_Files": [
+      "High-Frequency",
+      "Weather",
+      "NegRisk",
+      "BTC-HF",
+      "Pending"
+    ],
+    "L2_Content": [
+      "High-Frequency (3)",
+      "Weather (1)",
+      "NegRisk (3)",
+      "BTC-HF (3)",
+      "Pending (3)"
+    ]
+  },
+  "statistics": {
+    "totalTraders": 13,
+    "categories": 5,
+    "totalPnL": 5801503
+  }
+}

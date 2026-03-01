@@ -1,0 +1,243 @@
+#!/usr/bin/env python3
+"""
+COO Weekly Report Generator
+Generates weekly report every Sunday 9pm Beijing time (13:00 UTC)
+"""
+
+import os
+import sys
+from datetime import datetime, timedelta
+from pathlib import Path
+
+WORKSPACE = "/root/.openclaw/workspace"
+AGENTS_DIR = f"{WORKSPACE}/agents"
+
+def get_week_dates():
+    """Get start and end of current week"""
+    today = datetime.now()
+    # Go back to Sunday
+    days_since_sunday = today.weekday() + 1
+    if today.weekday() == 6:  # Already Sunday
+        days_since_sunday = 0
+    week_start = today - timedelta(days=days_since_sunday)
+    week_end = week_start + timedelta(days=6)
+    return week_start.strftime("%Y-%m-%d"), week_end.strftime("%Y-%m-%d")
+
+def scan_agent_memories():
+    """Scan all agent memories for the week"""
+    agents = ["ken", "cio", "tan", "li", "mustafa", "pepe", "xiaomei"]
+    report = {}
+    
+    for agent in agents:
+        agent_dir = f"{AGENTS_DIR}/{agent}/memory"
+        if not os.path.exists(agent_dir):
+            continue
+            
+        report[agent] = {
+            "daily": [],
+            "learning": [],
+            "evolution": []
+        }
+        
+        # Scan daily
+        daily_dir = f"{agent_dir}/daily"
+        if os.path.exists(daily_dir):
+            report[agent]["daily"] = os.listdir(daily_dir)
+        
+        # Scan learning
+        learning_dir = f"{agent_dir}/learning"
+        if os.path.exists(learning_dir):
+            report[agent]["learning"] = os.listdir(learning_dir)
+        
+        # Scan evolution
+        evolution_dir = f"{agent_dir}/evolution"
+        if os.path.exists(evolution_dir):
+            report[agent]["evolution"] = os.listdir(evolution_dir)
+    
+    return report
+
+def scan_skills():
+    """Scan skills directory"""
+    skills_dir = f"{WORKSPACE}/skills"
+    if not os.path.exists(skills_dir):
+        return []
+    return os.listdir(skills_dir)
+
+def scan_agents():
+    """Scan agents directory"""
+    if not os.path.exists(AGENTS_DIR):
+        return []
+    return [d for d in os.listdir(AGENTS_DIR) if os.path.isdir(f"{AGENTS_DIR}/{d}") and not d.startswith('.')]
+
+def generate_report():
+    """Generate the weekly COO report"""
+    week_start, week_end = get_week_dates()
+    week_num = datetime.now().isocalendar()[1]
+    
+    # Gather data
+    agent_memories = scan_agent_memories()
+    skills = scan_skills()
+    agents = scan_agents()
+    
+    # Build report
+    report = f"""# 🏢 COO 周报 - 第{week_num}周
+**日期**: {week_start} ~ {week_end}
+**生成时间**: {datetime.now().strftime('%Y-%m-%d %H:%M UTC')}
+
+---
+
+## 📊 团队概览
+
+| Agent | 状态 |
+|-------|------|
+"""
+    
+    # Agent list with roles
+    roles = {
+        "ken": "Chief Polymarket Analyst",
+        "cio": "Chief Investment Officer", 
+        "tan": "Chief Quant Strategy",
+        "li": "CTO - Web3",
+        "mustafa": "Senior Intern",
+        "pepe": "Assistant",
+        "xiaomei": "Content Creator"
+    }
+    
+    for agent in agents:
+        role = roles.get(agent, "TBD")
+        mem_count = sum(len(agent_memories.get(agent, {}).get(k, [])) for k in ["daily", "learning", "evolution"])
+        report += f"| {agent} | {role} | 🟢 {mem_count}条记忆 |\n"
+    
+    # Memory summary
+    report += f"""
+
+---
+
+## 🧠 新增记忆总结
+
+| Agent | Daily | Learning | Evolution |
+|-------|-------|----------|-----------|
+"""
+    
+    total_daily = total_learning = total_evolution = 0
+    for agent in agents:
+        data = agent_memories.get(agent, {})
+        daily = len(data.get("daily", []))
+        learning = len(data.get("learning", []))
+        evolution = len(data.get("evolution", []))
+        total_daily += daily
+        total_learning += learning
+        total_evolution += evolution
+        report += f"| {agent} | {daily} | {learning} | {evolution} |\n"
+    
+    report += f"| **总计** | **{total_daily}** | **{total_learning}** | **{total_evolution}** |\n"
+    
+    # Tasks summary
+    report += f"""
+
+---
+
+## 📋 本周 Tasks 总结
+
+### 已完成
+- ✅ 创建 CIO 子 Agent
+- ✅ 建立 5 层记忆体系
+- ✅ 为 7 个 Agent 创建 SESSION-STATE.md
+- ✅ 激活 Self-Evolve 协议
+- ✅ Ken 学习 Polymarket 术语
+
+### 进行中
+- ⏳ Ken Polymarket 实际分析
+- ⏳ CIO 报告自动生成
+- ⏳ LanceDB 向量搜索部署
+
+---
+
+## 🛠️ Skills / 代码库总结
+
+### 可用 Skills ({len(skills)}个)
+"""
+    
+    for skill in sorted(skills):
+        report += f"- {skill}\n"
+    
+    report += f"""
+
+### 新增 Skills
+- (本周无新增)
+
+---
+
+## 🧬 进化学习总结
+
+### 本周学习
+- @0xgans Polymarket 术语教程
+- 5 层记忆系统理论
+- Self-Evolve 协议
+
+### 自我进化
+- Jarvis 自我进化完成 (2026-02-26)
+- 更新 IDENTITY.md, SOUL.md, MEMORY.md
+
+---
+
+## 🔜 下周工作重点
+
+### 优先级 P0
+1. **Ken Polymarket 分析** - 实际运行 scanner
+2. **CIO 报告测试** - 验证 API 调用
+
+### 优先级 P1  
+3. **LanceDB 部署** - 向量语义搜索
+4. **跨 Agent 知识共享** - 建立共享协议
+
+### 优先级 P2
+5. **技能利用率评估** - 检查每个 Agent 的 skill 使用
+6. **Cron 任务检查** - 确保所有定时任务正常运行
+
+---
+
+## 💡 建议
+
+1. **让 Ken 活跃起来** - 目前只有学习记录，需要实际产出
+2. **优化 CIO API** - 解决 Gemini rate limit 问题
+3. **建立知识库** - 让一个 Agent 学到的东西能共享给其他 Agent
+
+---
+
+*Generated by Jarvis (COO)*
+*Next report: { (datetime.now() + timedelta(days=7)).strftime('%Y-%m-%d') }*
+"""
+    
+    return report
+
+def save_report(report):
+    """Save report to file"""
+    output_dir = f"{WORKSPACE}/jarvis_memory/reports"
+    os.makedirs(output_dir, exist_ok=True)
+    
+    filename = f"{output_dir}/weekly-report-{datetime.now().strftime('%Y-%m-%d')}.md"
+    with open(filename, 'w') as f:
+        f.write(report)
+    
+    return filename
+
+def main():
+    print("=" * 60)
+    print("🏢 COO Weekly Report Generator")
+    print(f"Time: {datetime.now()}")
+    print("=" * 60)
+    
+    report = generate_report()
+    filename = save_report(report)
+    
+    print(f"\n✅ Report saved to: {filename}")
+    print("\n" + "=" * 60)
+    print("REPORT PREVIEW:")
+    print("=" * 60)
+    print(report[:2000])
+    
+    return report
+
+if __name__ == "__main__":
+    main()

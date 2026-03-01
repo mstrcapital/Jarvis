@@ -1,0 +1,167 @@
+{
+  "generatedAt": "2026-02-17T21:21:18.771687",
+  "summary": {
+    "total_pnl": 5005350.74,
+    "active_traders": 12,
+    "profitable": 11,
+    "loss_making": 1,
+    "ranked_pnls": [
+      [
+        "@PolycoolApp",
+        4476569.12
+      ],
+      [
+        "@OpenClaw",
+        386000.0
+      ],
+      [
+        "@Demphu.finite",
+        91599.0
+      ],
+      [
+        "@vague-sourdough",
+        58712.0
+      ],
+      [
+        "@0x594edB",
+        30000.0
+      ],
+      [
+        "@HolyMoses7",
+        2578.1
+      ],
+      [
+        "@cryptorover",
+        499.31
+      ],
+      [
+        "@luishXYZ",
+        233.87
+      ],
+      [
+        "@clawdvine",
+        104.26
+      ],
+      [
+        "@itslirrato",
+        8.7
+      ],
+      [
+        "@blknoiz06",
+        1.19
+      ],
+      [
+        "@xmgnr",
+        0.0
+      ],
+      [
+        "@carverfomo",
+        0.0
+      ],
+      [
+        "@copenzafan",
+        -40954.81
+      ]
+    ]
+  },
+  "traders": {
+    "C1": {
+      "name": "@xmgnr",
+      "wallet": "0xfdd9fc462c9d5913c11dce63e737cb4c7ab9f22a",
+      "pnl": 0.0,
+      "value": 0.0,
+      "status": "不活跃"
+    },
+    "C2": {
+      "name": "@luishXYZ",
+      "wallet": "0x0da462636b228293849aac34c1857724757e4dde",
+      "pnl": 233.87,
+      "value": 2777.43,
+      "status": "活跃"
+    },
+    "C3": {
+      "name": "@copenzafan",
+      "wallet": "0x95923e6dfa4e685361ffb0ead28657d3fa18a85b",
+      "pnl": -40954.81,
+      "value": 4888.58,
+      "status": "活跃(亏损)"
+    },
+    "C4": {
+      "name": "@carverfomo",
+      "wallet": "0x227b22b78b422bbad333bf903a164db3212916cf",
+      "pnl": 0.0,
+      "value": 0.0,
+      "status": "不活跃"
+    },
+    "C6": {
+      "name": "@HolyMoses7",
+      "wallet": "0xa4b366ad22fc0d06f1e9346897b22431874b8b87",
+      "pnl": 2578.1,
+      "value": 140400.0,
+      "status": "活跃"
+    },
+    "C7": {
+      "name": "@PolycoolApp",
+      "wallet": "0x492442eab586f242b53bd",
+      "pnl": 4476569.12,
+      "value": 11100.0,
+      "status": "活跃"
+    },
+    "C8": {
+      "name": "@itslirrato",
+      "wallet": "0x3adaadddf92874041363ba3db77e949bcb9f861a",
+      "pnl": 8.7,
+      "value": 108.71,
+      "status": "活跃"
+    },
+    "D1": {
+      "name": "@clawdvine",
+      "wallet": "0x4de4d61565bbcc98605e4d53d0c6447a288e10a",
+      "pnl": 104.26,
+      "value": 0.0,
+      "status": "活跃"
+    },
+    "D3": {
+      "name": "@blknoiz06",
+      "wallet": "0xc387de398cf17f60c9def1d35bb89c8bea05b0e4",
+      "pnl": 1.19,
+      "value": 12.27,
+      "status": "活跃"
+    },
+    "D4": {
+      "name": "@cryptorover",
+      "wallet": "0x51f304b408809f",
+      "pnl": 499.31,
+      "value": 0.05,
+      "status": "活跃"
+    },
+    "B1": {
+      "name": "@0x594edB",
+      "wallet": "0x594edB9112f526Fa680b8F858A6379C8A2c1C11",
+      "pnl": 30000.0,
+      "value": 0.0,
+      "status": "活跃"
+    },
+    "F4": {
+      "name": "@vague-sourdough",
+      "wallet": "unknown",
+      "pnl": 58712.0,
+      "value": 16900.0,
+      "status": "活跃"
+    },
+    "F5": {
+      "name": "@Demphu.finite",
+      "wallet": "0xd0bde12c...",
+      "pnl": 91599.0,
+      "value": 0.0,
+      "status": "活跃"
+    },
+    "F6": {
+      "name": "@OpenClaw",
+      "wallet": "0x1979ae6b7e...",
+      "pnl": 386000.0,
+      "value": 0.0,
+      "status": "活跃"
+    }
+  }
+}

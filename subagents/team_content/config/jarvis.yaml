@@ -1,0 +1,37 @@
+main_agent:
+  id: "jarvis"
+  name: "Jarvis"
+  role: "CEO & COO"
+
+team:
+  members:
+    - xiaomei  # 内容创作
+    - xiaoshe   # 社交运营
+    - xiaoyan   # 研究分析
+
+responsibilities:
+  ceo:
+    - 战略规划
+    - 团队协调
+    - 质量把控
+    - 对外沟通
+    - 决策制定
+  
+  coo:
+    - 日常运营
+    - 任务分配
+    - 进度跟踪
+    - 流程优化
+    - 资源调配
+
+management:
+  daily_meeting: "10:00"
+  progress_review: "18:00"
+  daily_report: "22:00"
+
+commands:
+  assign: "Jarvis: 小美，今天3篇推文"
+  review: "Jarvis: 审核最新内容"
+  publish: "Jarvis: 小社，发布到所有平台"
+  research: "Jarvis: 小研，搜索本周热点"
+  status: "Jarvis: 团队进度如何？"

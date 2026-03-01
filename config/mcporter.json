@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "xapi": {
+      "baseUrl": "https://mcp.xapi.to/mcp?apikey=sk-13f1579ac8ee0810246ea4b0a4239b52bd2de6dcae251a53"
+    },
+    "exa": {
+      "baseUrl": "https://mcp.exa.ai/mcp"
+    }
+  },
+  "imports": []
+}

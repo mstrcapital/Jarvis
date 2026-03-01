@@ -1,0 +1,31 @@
+{
+  "index_version": "1.0",
+  "last_updated": "2026-02-24T05:35:00Z",
+  "events": {
+    "team-restructuring": {
+      "date": "2026-02-24",
+      "summary": "创建CTO Li, 升级Mustafa为Senior Intern",
+      "details": "Li负责Web3技术基础设施, Mustafa负责X账号运营"
+    },
+    "xapi-setup": {
+      "date": "2026-02-24",
+      "summary": "配置xAPI MCP (Twitter/Web搜索/加密货币)",
+      "api_key": "sk-13f1***"
+    },
+    "nkmc-setup": {
+      "date": "2026-02-24",
+      "summary": "安装nkmc CLI - 通用API网关",
+      "apis": ["github", "vercel", "stripe", "slack", "discord", "blockchain"]
+    },
+    "tenacitOS-deploy": {
+      "date": "2026-02-24",
+      "summary": "部署TenacitOS Dashboard",
+      "url": "http://100.54.110.106:3000"
+    }
+  },
+  "topics": {
+    "web3": ["Li CTO", "USDT收入端口", "Vercel/Cloudflare"],
+    "team": ["Li CTO", "Mustafa Senior Intern", "小美", "pepe"],
+    "tools": ["xAPI", "nkmc", "TenacitOS", "mcporter"]
+  }
+}

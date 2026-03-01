@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "skills": {
+    "agent-browser": {
+      "version": "0.2.0",
+      "installedAt": 1770803375381
+    },
+    "proactive-agent": {
+      "version": "3.1.0",
+      "installedAt": 1771087747410
+    },
+    "elite-longterm-memory": {
+      "version": "1.2.3",
+      "installedAt": 1771087751245
+    },
+    "ai-persona-os": {
+      "version": "1.4.0",
+      "installedAt": 1771087758663
+    },
+    "proactive-solvr": {
+      "version": "1.6.6",
+      "installedAt": 1771087801202
+    },
+    "soul-md": {
+      "version": "1.0.0",
+      "installedAt": 1771087812438
+    },
+    "soulcraft": {
+      "version": "1.0.0",
+      "installedAt": 1771087817894
+    },
+    "jarvis-memory-architecture": {
+      "version": "1.0.0",
+      "installedAt": 1771087821351
+    },
+    "self-evolve": {
+      "version": "1.0.0",
+      "installedAt": 1771087827228
+    },
+    "agent-builder": {
+      "version": "1.0.0",
+      "installedAt": 1771087865663
+    }
+  }
+}

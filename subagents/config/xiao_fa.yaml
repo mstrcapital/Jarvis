@@ -1,0 +1,12 @@
+subagent:
+  id: "xiao_fa"
+  name: "小法"
+  role: "法律顾问"
+memory:
+  limit: "256MB"
+  isolation: true
+schedule:
+  - "08:00,weekly"
+capabilities:
+  - task_coordination
+  - progress_tracking

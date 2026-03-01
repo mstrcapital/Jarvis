@@ -1,0 +1,23 @@
+{
+  "timestamp": "2026-02-19T01:35:36.377Z",
+  "totalFiles": 7,
+  "totalChunks": 14,
+  "byDomain": {
+    "long_term": {
+      "files": 1,
+      "chunks": 2
+    },
+    "user_context": {
+      "files": 3,
+      "chunks": 4
+    },
+    "project_memory": {
+      "files": 2,
+      "chunks": 7
+    },
+    "skills_index": {
+      "files": 1,
+      "chunks": 1
+    }
+  }
+}

@@ -1,0 +1,29 @@
+# 批量收集链接池
+# 格式: 平台 | 链接 | 标签(逗号分隔) | 优先级(high/medium/low) | 状态(pending/processing/done)
+
+# ==================== 奢侈品/珠宝类 ====================
+youtube | https://www.youtube.com/watch?v=xxx | luxury,jewelry,hermes | high | pending
+youtube | https://www.youtube.com/watch?v=xxx | luxury,bag,birkin | medium | pending
+instagram | https://www.instagram.com/reel/xxx | luxury,jewelry | medium | pending
+tiktok | https://www.tiktok.com/@xxx/video/xxx | luxury,lifestyle | low | pending
+
+# ==================== Crypto/Meme类 ====================
+youtube | https://www.youtube.com/watch?v=xxx | crypto,meme,alpha | high | pending
+twitter | https://twitter.com/xxx/status/xxx | crypto,meme | high | pending
+tiktok | https://www.tiktok.com/@crypto_kol/video/xxx | crypto,trading | medium | pending
+
+# ==================== 生活方式类 ====================
+youtube | https://www.youtube.com/watch?v=xxx | lifestyle,luxury | medium | pending
+bilibili | https://www.bilibili.com/video/xxx | lifestyle,fashion | low | pending
+instagram | https://www.instagram.com/p/xxx | lifestyle,travel | low | pending
+
+# ==================== 优质创作者 ====================
+youtube | https://www.youtube.com/@luxury_creator | luxury,unboxing | high | pending
+youtube | https://www.youtube.com/@crypto_alpha | crypto,analysis | high | pending
+tiktok | https://www.tiktok.com/@fashion_daily | fashion,lifestyle | medium | pending
+
+# ==================== 模板格式说明 ====================
+# 平台支持: youtube, tiktok, bilibili, instagram, twitter, dailymotion, vimeo, 其他
+# 标签示例: luxury, jewelry, crypto, meme, lifestyle, fashion, unboxing, review, tutorial
+# 优先级: high (优先下载), medium (普通), low (有空再下)
+# 状态: pending (待下载), processing (下载中), done (已完成)

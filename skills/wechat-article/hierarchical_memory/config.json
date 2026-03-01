@@ -1,0 +1,15 @@
+{
+  "project": "WeChat Articles",
+  "createdAt": "2026-02-19T01:42:03.194Z",
+  "domains": [
+    "articles",
+    "templates",
+    "strategy",
+    "analytics"
+  ],
+  "layers": [
+    "L0_Domains",
+    "L1_Files",
+    "L2_Content"
+  ]
+}

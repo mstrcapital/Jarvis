@@ -1,0 +1,12 @@
+subagent:
+  id: "xiao_fruit"
+  name: "小果"
+  role: "iOS开发"
+memory:
+  limit: "512MB"
+  isolation: true
+schedule:
+  - "09:30,as_needed"
+capabilities:
+  - task_coordination
+  - progress_tracking

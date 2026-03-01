@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #0a0a0a;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar for Dark Theme */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4b5563; /* slate-600 */
+  border-radius: 5px;
+  border: 2px solid #242424; /* matches bg to create padding effect */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6b7280; /* slate-500 */
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* WaveSurfer 横向滚动条样式 - 使用 ::part() 穿透 Shadow DOM */
+.wavesurfer-wrapper::part(scroll)::-webkit-scrollbar,
+.wavesurfer-wrapper *::part(scroll)::-webkit-scrollbar {
+  height: 6px;
+}
+
+.wavesurfer-wrapper::part(scroll)::-webkit-scrollbar-track,
+.wavesurfer-wrapper *::part(scroll)::-webkit-scrollbar-track {
+  background: rgba(30, 41, 59, 0.5); /* slate-800 半透明 */
+  border-radius: 3px;
+}
+
+.wavesurfer-wrapper::part(scroll)::-webkit-scrollbar-thumb,
+.wavesurfer-wrapper *::part(scroll)::-webkit-scrollbar-thumb {
+  background: #4b5563; /* slate-600 */
+  border-radius: 3px;
+}
+
+.wavesurfer-wrapper::part(scroll)::-webkit-scrollbar-thumb:hover,
+.wavesurfer-wrapper *::part(scroll)::-webkit-scrollbar-thumb:hover {
+  background: #6b7280; /* slate-500 */
+}
+
+/* Electron Drag Regions */
+.drag-region {
+  -webkit-app-region: drag;
+  user-select: none;
+}
+
+.no-drag {
+  -webkit-app-region: no-drag;
+}

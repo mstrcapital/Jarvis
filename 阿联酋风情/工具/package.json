@@ -1,0 +1,17 @@
+{
+  "name": "postiz-uploader",
+  "version": "1.0.0",
+  "description": "Postiz自动上传脚本 - 用于阿联酋风情素材库",
+  "main": "postiz-upload.js",
+  "scripts": {
+    "upload": "node postiz-upload.js",
+    "test": "node postiz-upload.js"
+  },
+  "keywords": ["postiz", "uploader", "automation", "youtube", "tiktok"],
+  "author": "Jarvis",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "form-data": "^4.0.0"
+  }
+}

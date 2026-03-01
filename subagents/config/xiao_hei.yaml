@@ -1,0 +1,12 @@
+subagent:
+  id: "xiao_hei"
+  name: "小黑"
+  role: "黑科技情报"
+memory:
+  limit: "512MB"
+  isolation: true
+schedule:
+  - "09:00,15:00"
+capabilities:
+  - task_coordination
+  - progress_tracking

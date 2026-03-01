@@ -1,0 +1,12 @@
+subagent:
+  id: "xiao_long"
+  name: "小龙"
+  role: "社区管理"
+memory:
+  limit: "256MB"
+  isolation: true
+schedule:
+  - "24h"
+capabilities:
+  - task_coordination
+  - progress_tracking

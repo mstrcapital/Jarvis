@@ -1,0 +1,43 @@
+{
+  "version": "1",
+  "created": "2026-02-24",
+  "total_items": 4,
+  "items": [
+    {
+      "id": "1",
+      "title": "Measuring AI Agent Autonomy",
+      "url": "https://www.anthropic.com/research/measuring-agent-autonomy",
+      "date": "2026-02-24",
+      "type": "article",
+      "summary": "Anthropic research on how users grant autonomy to AI agents",
+      "tags": ["AI", "autonomy", "research"]
+    },
+    {
+      "id": "2",
+      "title": "Personal Knowledge Base RAG",
+      "url": "https://github.com/hesamsheikh/awesome-openclaw-usecases",
+      "date": "2026-02-24",
+      "type": "article",
+      "summary": "OpenClaw用例：建立个人知识库",
+      "tags": ["AI", "RAG", "knowledge"]
+    },
+    {
+      "id": "3",
+      "title": "EvoMap - AI Self-Evolution Infrastructure",
+      "url": "https://evomap.ai",
+      "date": "2026-02-27",
+      "type": "article",
+      "summary": "AI Agent 进化市场，Capsule 发布",
+      "tags": ["AI", "marketplace", "evolution"]
+    },
+    {
+      "id": "4",
+      "title": "NKMC.ai - The gateway of internet for all agents",
+      "url": "https://nkmc.ai/",
+      "date": "2026-02-27",
+      "type": "article",
+      "summary": "AI Agent 网关服务 - 5个命令控制互联网",
+      "tags": ["AI", "agent", "gateway", "API"]
+    }
+  ]
+}

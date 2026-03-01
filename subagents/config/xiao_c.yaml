@@ -1,0 +1,12 @@
+subagent:
+  id: "xiao_c"
+  name: "小C"
+  role: "内容运营"
+memory:
+  limit: "512MB"
+  isolation: true
+schedule:
+  - "10:00,14:00,18:00"
+capabilities:
+  - task_coordination
+  - progress_tracking
