@@ -1,3 +1,8 @@
+---
+name: ritmex-bot
+description: Perp DEX Trading Bot - Multi-exchange perpetual futures trading with SMA30 trend, Guardian stop-loss, and market-making strategies.
+---
+
 # ritmex-bot Skill
 
 > Perp DEX Trading Bot - Multi-exchange perpetual futures trading with SMA30 trend, Guardian stop-loss, and market-making strategies.

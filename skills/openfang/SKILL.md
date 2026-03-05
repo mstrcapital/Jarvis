@@ -1,3 +1,8 @@
+---
+name: openfang
+description: Agent Operating System built in Rust - Autonomous agents that work for you 24/7 with 7 built-in Hands (Clip, Lead, Collector, Predictor, Researcher, Twitter, Browser).
+---
+
 # OpenFang Skill
 
 > Agent Operating System built in Rust - Autonomous agents that work for you 24/7
