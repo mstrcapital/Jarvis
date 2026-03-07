@@ -126,6 +126,62 @@ def check_workspace():
     
     return issues
 
+def check_apis():
+    """检查API连通性"""
+    issues = []
+    import yfinance as yf
+    import ccxt
+    
+    # Stock API (yfinance)
+    try:
+        spy = yf.download('SPY', period='1d', progress=False, timeout=10)
+        if spy.empty:
+            issues.append("❌ yfinance股票API: 无数据")
+        else:
+            print("  ✅ yfinance股票API: SPY $" + str(spy['Close'].iloc[-1].values[0])[:6])
+    except Exception as e:
+        issues.append(f"❌ yfinance股票API: {str(e)[:30]}")
+    
+    # Crypto APIs
+    crypto_exchanges = [
+        ("kraken", "BTC/USDT"),
+        ("coinbase", "BTC/USDT"),
+    ]
+    for ex, pair in crypto_exchanges:
+        try:
+            exchange = getattr(ccxt, ex)()
+            ticker = exchange.fetch_ticker(pair)
+            price = ticker.get('last', 0)
+            if price > 0:
+                print(f"  ✅ {ex}: BTC ${price}")
+            else:
+                issues.append(f"❌ {ex}: 无价格数据")
+        except Exception as e:
+            issues.append(f"❌ {ex}: {str(e)[:25]}")
+    
+    # Polymarket
+    try:
+        r = requests.get('https://gamma-api.polymarket.com/markets', timeout=10)
+        if r.status_code == 200:
+            print("  ✅ Polymarket Gamma API")
+        else:
+            issues.append(f"❌ Polymarket: {r.status_code}")
+    except Exception as e:
+        issues.append(f"❌ Polymarket: {str(e)[:25]}")
+    
+    # Deribit Options (volatility proxy)
+    try:
+        r = requests.get('https://www.deribit.com/api/v2/public/get_book_summary_by_currency',
+                        params={'currency': 'BTC', 'kind': 'option', 'count': 5}, timeout=10)
+        if r.status_code == 200:
+            print("  ✅ Deribit Options API")
+        else:
+            issues.append(f"❌ Deribit: {r.status_code}")
+    except Exception as e:
+        issues.append(f"❌ Deribit: {str(e)[:25]}")
+    
+    return issues
+
 def main():
     print(f"🔍 Alex System Health Check - {datetime.now().strftime('%Y-%m-%d %H:%M')}")
     print("=" * 50)
@@ -158,6 +214,12 @@ def main():
     
     print("\n📁 工作区检查...")
     issues = check_workspace()
+    all_issues.extend(issues)
+    for i in issues:
+        print(f"  {i}")
+    
+    print("\n🌐 API检查...")
+    issues = check_apis()
     all_issues.extend(issues)
     for i in issues:
         print(f"  {i}")

@@ -16,11 +16,12 @@ Research and monitor:
 
 | Priority | Source | URL |
 |----------|--------|-----|
-| 1 | Deribit BTC Volatility Index | https://www.deribit.com/statistics/BTC/volatility-index |
-| 2 | OptionCharts SPY/QQQ | https://optioncharts.io/options/SPY |
+| 1 | yfinance VIX | ^VIX (市场恐慌指数) |
+| 2 | Deribit BTC Options | https://www.deribit.com/api/v2/public/get_book_summary_by_currency (需计算IV) |
 | 3 | Polymarket Bitcoin | https://polymarket.com/predictions/bitcoin |
 | 4 | Polymarket Ethereum | https://polymarket.com/predictions/ethereum |
 | 5 | Coinglass BTC OI | https://www.coinglass.com/open-interest/BTC |
+| 6 | yfinance SPY/QQQ | 股票期权数据 |
 
 ## Reporting Schedule
 
